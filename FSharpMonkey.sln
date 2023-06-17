@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpMonkey", "FSharpMonkey\FSharpMonkey.fsproj", "{DF273EB5-C275-4868-8B0B-6C42F5F98DDF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpMonkeyTests", "FSharpMonkeyTests\FSharpMonkeyTests.fsproj", "{4C70409A-CDD3-44BD-8C06-38700CBF5AD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF273EB5-C275-4868-8B0B-6C42F5F98DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF273EB5-C275-4868-8B0B-6C42F5F98DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF273EB5-C275-4868-8B0B-6C42F5F98DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF273EB5-C275-4868-8B0B-6C42F5F98DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C70409A-CDD3-44BD-8C06-38700CBF5AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C70409A-CDD3-44BD-8C06-38700CBF5AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C70409A-CDD3-44BD-8C06-38700CBF5AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C70409A-CDD3-44BD-8C06-38700CBF5AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
