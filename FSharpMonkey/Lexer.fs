@@ -35,18 +35,24 @@ let readIdentifier (lexer: Lexer) =
         readChar lexer |> ignore
     lexer.input[position..lexer.position]
     
-let skipWhitespace (lexer: Lexer) =
-    while lexer.ch = (Some ' ') ||  lexer.ch = (Some '\t') || lexer.ch = (Some '\n') || lexer.ch = (Some '\r') do
+let rec skipWhitespace (lexer: Lexer) =
+    match lexer.ch with
+    | (Some ' ') | (Some '\t') | (Some '\n') | (Some '\r') ->
         readChar lexer |> ignore
-    ()
+        skipWhitespace lexer
+    | _ -> ()
 let isDigit input =
     (Some '0') <= input && input <= (Some '9')
     
-let readNumber (lexer: Lexer) =
-    let position = lexer.position
-    while isDigit (Some (peek lexer)) do
-        readChar lexer |> ignore
-    lexer.input[position..lexer.position]
+let rec readNumber (lexer: Lexer) =
+    let rec readNumberInternal (lexer: Lexer) (position: int) =
+        if isDigit (Some (peek lexer)) then
+            readChar lexer |> ignore
+            readNumberInternal lexer position
+        else
+            lexer.input[position..lexer.position]
+    readNumberInternal lexer lexer.position
+    
         
 let nextToken(lexer: Lexer) =
     skipWhitespace lexer

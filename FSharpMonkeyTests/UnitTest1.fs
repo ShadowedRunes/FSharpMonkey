@@ -68,8 +68,8 @@ let TestNextTokenAdvanced() =
     while counter < List.length revList do
         printfn "%A" counter
         Assert.True (expectedTokens[counter] = revList[counter])
-        counter <- counter + 1
-    *)
+        counter <- counter + 1*)
+    
     Assert.True((expectedTokens = revList))
     
 [<Test>]
