@@ -30,10 +30,13 @@ let peek (lexer: Lexer): char =
         lexer.input[lexer.readPosition]
     
 let readIdentifier (lexer: Lexer) =
-    let position = lexer.position
-    while isLetter (Some (peek lexer)) do
-        readChar lexer |> ignore
-    lexer.input[position..lexer.position]
+    let rec readIdentifier' (lexer: Lexer) (position: int) =
+        if isLetter (Some (peek lexer)) then
+            readChar lexer |> ignore
+            readIdentifier' lexer position
+        else 
+            lexer.input[position..lexer.position]
+    readIdentifier' lexer lexer.position
     
 let rec skipWhitespace (lexer: Lexer) =
     match lexer.ch with
